@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "KishanMajdurEkta",
-    "slug": "KishanMajdurEkta",
-    "version": "1.0.0",
+    "name": "Kishan Majdur Ekta",
+    "slug": "kishanmazdoorekta",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,13 +18,20 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "ttpc.kishanmazdoorekta",
+      "versionCode": 7,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2062c1cf-1d89-4b17-ade4-82e8004db4f0"
+      }
     }
   }
 }

@@ -1,20 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text } from "react-native";
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import Splash from "./src/pages/Splash";
+import Home from "./src/pages/Home";
+import Header from "./src/pages/Header";
+import Demand from "./src/pages/Demand";
+import Development from "./src/pages/Development";
+import Gallery from "./src/pages/MainGallery";
+import Contact from "./src/pages/Contact";
 
-export default function App() {
+const App = () => {
+  const Stack = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="splash">
+        <Stack.Screen
+          name="splash"
+          component={Splash}
+          options={{ headerShown: false }} // Hide header for the splash screen
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            header: () => <Header title="Your Header Title" />,
+          }}
+        />
+        <Stack.Screen
+          name="demand"
+          component={Demand}
+          options={{
+            header: () => <Header title="Your Header Title" />,
+          }}
+        />
+        <Stack.Screen
+          name="development"
+          component={Development}
+          options={{
+            header: () => <Header title="Your Header Title" />,
+          }}
+        />
+        <Stack.Screen
+          name="gallery"
+          component={Gallery}
+          options={{
+            header: () => <Header title="Your Header Title" />,
+          }}
+        />
+        <Stack.Screen
+          name="contact"
+          component={Contact}
+          options={{
+            header: () => <Header title="Your Header Title" />,
+          }}
+        /> 
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
